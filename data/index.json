@@ -1,5 +1,7 @@
 {
   "LBA": {
+    "author": "Patrick Lake",
+    "repo": "https://github.com/patricklake2/leeds-flight-emissions/",
     "index":"https://raw.githubusercontent.com/patricklake2/leeds-flight-emissions/master/flight-data/LBA/index.json"
   }
 }
