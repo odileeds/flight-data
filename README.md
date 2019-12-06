@@ -1,4 +1,5 @@
-# flight-data
+# Flight emissions data
+
 A distributed project to collate flight data for emissions calculations.
 
 ## How to contribute?
