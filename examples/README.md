@@ -4,7 +4,7 @@
 You should have one directory for your data, in it there should be seperate JSON file for each day, where the filename is the date in ISO format (YYYY-MM-DD.json).
 The file should have the following format:
 
-```json
+```javascript
 {
     "Date": "2019-12-11",
     "Airport": {        //origin airport information
