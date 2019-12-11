@@ -38,7 +38,7 @@ The file should have the following format:
 We also have a [full example](flights-example.json) to refer to.
 
 ## Metadata
-In the directory where your data is stored, you should create a file named 'meta.json'. This is just so our website knows where to find your most recent data. It only requires 1 fields and should be in the following format:
+You should create a json file containing the following fields:
 
 ```json
 {
@@ -47,9 +47,9 @@ In the directory where your data is stored, you should create a file named 'meta
 }
 ```
 
-This means as long as you don't change the location of your index file, you can host your data wherever you want 
+All you need to supply us is the location of this file. This means as long as you keep this file in the same place, you can change where the data is stored 
 
 ## Index File
-Once you're up and running, either edit our [our index file](data/index.json) yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help.
+Once you're up and running, you just need to add the location of your metadata file to our [our index file.](data/index.json)  You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help.
 
 
