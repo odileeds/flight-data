@@ -39,13 +39,17 @@ We also have a [full example](flights-example.json) to refer to.
 
 ## Metadata
 In the directory where your data is stored, you should create a file named 'meta.json'. This is just so our website knows where to find your most recent data. It only requires 1 fields and should be in the following format:
+
 ```json
 {
-    "lastUpdated": "2019-11-31"
+    "lastUpdated": "2019-11-31",
+    "dataFolder": "https://raw.githubusercontent.com/patricklake2/leeds-flight-emissions/master/flight-data/LBA/"
 }
 ```
 
+This means as long as you don't change the location of your index file, you can host your data wherever you want 
+
 ## Index File
-Once you're up and running, either add yourself to [our index file](data/index.json) and open a pull request, or open an issue and we'll help.
+Once you're up and running, either edit our [our index file](data/index.json) yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help.
 
 
