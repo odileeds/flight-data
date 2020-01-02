@@ -2,7 +2,7 @@
   {
     "name": "Leeds Bradford",
     "author": "Patrick Lake",
-    "repo": "https://github.com/patricklake2/leeds-flight-emissions/",
+    "repo": "https://github.com/patricklake2/flight-emissions/",
     "index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/index.json"
   }
 ]
