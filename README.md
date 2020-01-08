@@ -6,8 +6,8 @@ We started collating flight emissions data for Leeds and Bradford airport to pow
 
 If you'd like to take on responsibility for recording data for a specific airport, you will need to:
 
-1. save daily JSON files of flights
-2. create a metadata JSON file that describes your airport dataset
-3. update the [Primary index file](index.json) to include your airport
+1. save [daily JSON files of flights](examples/#flight-data)
+2. create a [metadata JSON file](examples/#airport-metadata) that describes your airport dataset
+3. update the [Primary index file](examples/#primary-index) to include your airport
 
 See [our examples](examples/) for more information
