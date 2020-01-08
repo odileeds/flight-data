@@ -94,4 +94,4 @@ Each airport (keyed by the IATA code) then contains:
 * `n` - a free-form field for the displayed airport name
 * `author` - the name of the person compiling emissions data for this airport
 * `url` - a URL to e.g. the Github repository
-* `index` - the URL of an `index.json` file that defines the metadata for this airport
+* `index` - the URL of an `index.json` file that defines the [metadata](#metadata) for this airport
