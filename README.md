@@ -8,6 +8,6 @@ If you'd like to take on responsibility for recording data for a specific airpor
 
 1. save daily JSON files of flights (format to be defined)
 2. create an metadata JSON file that describes your dataset
-3. update the [index.json file](data/index.json) to include your airport
+3. update the [index.json file](index.json) to include your airport
 
 See [our examples](examples/) for more information
