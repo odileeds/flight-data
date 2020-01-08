@@ -86,7 +86,7 @@ We've used ordered arrays so that more parameters could be added in the future, 
 
 ## Primary index
 
-Once you've got your flight data and airport metadata files published somewhere on the web (with CORS enabled), you just need to add the location of your airport metadata file to our [our index file](data/index.json). You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help. This file will let tools know which airports are available. It shouldn't need to be updated often.
+Once you've got your flight data and airport metadata files published somewhere on the web (with CORS enabled), you just need to add the location of your airport metadata file to our [our Primary index file](../data/index.json). You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help. This file will let tools know which airports are available. It shouldn't need to be updated often.
 
 ```javascript
 {
