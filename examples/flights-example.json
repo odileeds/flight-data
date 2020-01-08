@@ -1,5 +1,5 @@
 {
-	"from": {        // origin airport information
+	"from": {
 		"n": "Leeds Bradford",
 		"IATA": "LBA",
 		"geo": [-1.5,53.5],
