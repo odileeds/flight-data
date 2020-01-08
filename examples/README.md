@@ -56,8 +56,6 @@ The file should have the following format:
     * `f` - the emissions factor
     * `kg` - the kilograms of CO2
 
-We also have a [full example](flights-example.json) to refer to.
-
 ## Metadata
 
 ```javascript
