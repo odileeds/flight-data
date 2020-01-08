@@ -10,7 +10,7 @@ To keep things manageable we've split the data into three parts:
 
 ## Flight data
 
-This contains the full details for each departure from an airport in a given day (*local time*). You should have one directory for your data, in it there should be a seperate JSON file for each day, where the filename is the date in ISO format (YYYY-MM-DD.json). By splitting the data into individual days, it keeps filesize more manageable rather than linearly growing with time e.g. Leeds and Bradford works out at under 5.5 kB per file.
+This contains the full details for each departure from an airport in a given day (*local time*). You should have one directory for your data, in it there should be a seperate JSON file for each day, where the filename is the date in ISO format (YYYY-MM-DD.json). By splitting the data into individual days, it keeps filesize more manageable rather than linearly growing with time e.g. Leeds and Bradford works out at under 5.5 kB per file. You can estimate emissions using [Patrick Lake's methodology](https://github.com/patricklake2/flight-emissions/tree/master/leeds-bradford#data).
 
 The file should have the following format:
 
