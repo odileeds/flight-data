@@ -6,28 +6,21 @@ The file should have the following format:
 
 ```javascript
 {
-    "Date": "2019-12-11",
-    "Airport": {        //origin airport information
-        "Name": "Leeds Bradford",
-        "IATA": "LBA"
+	"from": {        // origin airport information
+		"n": "Leeds Bradford",
+        "IATA": "LBA",
+        "geo": [-1.5,53.5],
+		"cc": "GB",
+		"continent": "EU"
     },
-    "Flights": [
+    "flights": [
         {
-            "FlightNumber": "KL1540",
-            "DateTime": "2019-12-11 06:10:00", // Should be YYYY-MM-DD HH:MM:SS format
-            "Airline": "KLM",
-            "Destination": "Amsterdam",
-            "IATA": "AMS",
-            "Lat": 52.3086,
-            "Lon": 4.76389,
-            "Country": "Netherlands",
-            "Continent": "Europe",
-            "Distance": 462.46,     //measured in kilometers
-            "Flight_Type": "ShortHaul",
-            "Aircraft_Code": "E190",        //leave empty if unknown
-            "Aircraft_Name": "EMBRAER ERJ190",      //leave empty if unknown
-            "Emissions_Factor": 10.2,     //kg CO2 per km
-            "Emissions": 4717.13    //distance * emissions_factor
+            "id":"KL1540",
+            "time":"2019-12-11T06:10Z",
+            "airline":"KLM",
+            "aircraft":{"code":"E190","name":"EMBRAER ERJ190"},
+            "to":{"n":"Amsterdam","IATA":"AMS","geo":[4.7639,52.3086],"cc":"NL","continent":"EU" },
+            "km":462.46,
         },
         {
             //another flight 
