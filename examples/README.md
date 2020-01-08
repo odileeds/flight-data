@@ -45,7 +45,7 @@ The file should have the following format:
   * `continent` - a [two letter continent code](https://datahub.io/core/continent-codes) e.g. `AF`, `NA`, `OC`, `AN`, `AS`, `EU`, `SA`
 * `flights` - an array of flights (in chronological order). Each flight contains:
   * `id` - the flight code
-  * `time` - the [ISO8601 timestamp](https://en.wikipedia.org/wiki/ISO_8601) for the departure (with timezone)
+  * `time` - the [ISO8601 timestamp](https://en.wikipedia.org/wiki/ISO_8601) for the departure in local time *with* timezone included
   * `airline` - the name of the airline
   * `aircraft` - details of the aircraft broken down into:
     * `code` - the aircraft code e.g. "E190"
