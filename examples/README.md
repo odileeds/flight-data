@@ -20,6 +20,7 @@ The file should have the following format:
 		"aircraft":{"code":"E190","name":"EMBRAER ERJ190"},
 		"to":{"n":"Amsterdam","IATA":"AMS","geo":[4.7639,52.3086],"cc":"NL","continent":"EU" },
 		"km":462.46,
+		"emissions":{"f":10.2,"kg":4717.13}
 	},{
 		//another flight 
 	}]
