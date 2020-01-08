@@ -1,12 +1,12 @@
 # Data
 
-We started collating flight emissions data for Leeds and Bradford airport to power our [Flight Emissions comparison tool](https://patricklake2.github.io/flight-emissions/). We realised that it would benefit others if the emissions data were openly available and if other people could contribute by doing the work for other airports]. This project aims to allow different people/organisations to take responsibility for collating data for different airports and publish it to their own URLs but make it available to others so we can all benefit.
+We started collating flight emissions data for Leeds and Bradford airport to power our [Flight Emissions comparison tool](https://patricklake2.github.io/flight-emissions/). We realised that it would benefit others if the emissions data were openly available and if other people could contribute by doing the work for other airports. This project aims to allow different people/organisations to take responsibility for collating data for different airports and publish it to their own URLs but make it available to others so we can all benefit.
 
 To keep things manageable we've split the data into three parts:
 
 * [Flight data](#flight-data)
 * [Airport metadata](#airport-metadata)
-* [Index file](#index-file)
+* [Primary index](#primary-index)
 
 ## Flight data
 
@@ -84,7 +84,7 @@ The format is defined as follows:
 
 We've used ordered arrays so that more parameters could be added in the future, if necessary. With `dates`, `emissions`, and `flights` the file should grow by around 25 bytes per day (~9kB per year).
 
-## Index file
+## Primary index
 
 Once you've got your flight data and airport metadata files published somewhere on the web (with CORS enabled), you just need to add the location of your airport metadata file to our [our index file](data/index.json). You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help. This file will let tools know which airports are available. It shouldn't need to be updated often.
 
