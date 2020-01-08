@@ -1,6 +1,10 @@
 # Data
 
-## Flight Data
+* [Flight data](#flight-data)
+* [Metadata](#metadata)
+* [Index file](#index-file)
+
+## Flight data
 
 You should have one directory for your data, in it there should be seperate JSON file for each *local time* day, where the filename is the date in ISO format (YYYY-MM-DD.json).
 The file should have the following format:
@@ -74,7 +78,7 @@ The metadata file for an individual airport is designed to provide summary data 
 * `emissions` - an array (in the same order as `dates`) with the total emissions in kilograms
 * `flights` - an array (in the same order as `dates`) with the number of flights per day
 
-We've used ordered arrays so that more parameters could be added in the future, if necessary.
+We've used ordered arrays so that more parameters could be added in the future, if necessary. With `dates`, `emissions`, and `flights` the file should grow by around 25 bytes per day (~9kB per year).
 
 ## Index File
 Once you're up and running, you just need to add the location of your metadata file to our [our index file.](data/index.json)  You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help.
