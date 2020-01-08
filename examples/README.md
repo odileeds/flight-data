@@ -79,6 +79,19 @@ The metadata file for an individual airport is designed to provide summary data 
 We've used ordered arrays so that more parameters could be added in the future, if necessary. With `dates`, `emissions`, and `flights` the file should grow by around 25 bytes per day (~9kB per year).
 
 ## Index File
-Once you're up and running, you just need to add the location of your metadata file to our [our index file.](data/index.json)  You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help.
 
+Once you're up and running, you just need to add the location of your metadata file to our [our index file](data/index.json).  You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help.
 
+```javascript
+{
+	"LBA":{ "n":"Leeds Bradford", "author":"Patrick Lake", "url":"https://github.com/patricklake2/flight-emissions/", "index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/index.json" },
+	"MAN":{ "n":"Manchester", "author":"TBD", "repo":"", "index":"" }
+}
+```
+
+Each airport (keyed by the IATA code) then contains:
+
+* `n` - a free-form field for the displayed airport name
+* `author` - the name of the person compiling emissions data for this airport
+* `url` - a URL to e.g. the Github repository
+* `index` - the URL of an `index.json` file that defines the metadata for this airport
