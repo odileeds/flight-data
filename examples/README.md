@@ -8,24 +8,21 @@ The file should have the following format:
 {
 	"from": {        // origin airport information
 		"n": "Leeds Bradford",
-        "IATA": "LBA",
-        "geo": [-1.5,53.5],
+		"IATA": "LBA",
+		"geo": [-1.5,53.5],
 		"cc": "GB",
 		"continent": "EU"
-    },
-    "flights": [
-        {
-            "id":"KL1540",
-            "time":"2019-12-11T06:10Z",
-            "airline":"KLM",
-            "aircraft":{"code":"E190","name":"EMBRAER ERJ190"},
-            "to":{"n":"Amsterdam","IATA":"AMS","geo":[4.7639,52.3086],"cc":"NL","continent":"EU" },
-            "km":462.46,
-        },
-        {
-            //another flight 
-        }
-    ]
+	},
+	"flights": [{
+		"id":"KL1540",
+		"time":"2019-12-11T06:10Z",
+		"airline":"KLM",
+		"aircraft":{"code":"E190","name":"EMBRAER ERJ190"},
+		"to":{"n":"Amsterdam","IATA":"AMS","geo":[4.7639,52.3086],"cc":"NL","continent":"EU" },
+		"km":462.46,
+	},{
+		//another flight 
+	}]
 }
 ```
 We also have a [full example](flights-example.json) to refer to.
