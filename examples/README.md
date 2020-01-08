@@ -1,12 +1,17 @@
 # Data
 
+We started collating flight emissions data for Leeds and Bradford airport to power our [Flight Emissions comparison tool](https://patricklake2.github.io/flight-emissions/). We realised that it would benefit others if the emissions data were openly available and if other people could contribute by doing the work for other airports]. This project aims to allow different people/organisations to take responsibility for collating data for different airports and publish it to their own URLs but make it available to others so we can all benefit.
+
+To keep things manageable we've split the data into three parts:
+
 * [Flight data](#flight-data)
-* [Metadata](#metadata)
+* [Airport metadata](#airport-metadata)
 * [Index file](#index-file)
 
 ## Flight data
 
-You should have one directory for your data, in it there should be seperate JSON file for each *local time* day, where the filename is the date in ISO format (YYYY-MM-DD.json).
+This contains the full details for each departure from an airport in a given day (*local time*). You should have one directory for your data, in it there should be a seperate JSON file for each day, where the filename is the date in ISO format (YYYY-MM-DD.json). By splitting the data into individual days, it keeps filesize more manageable rather than linearly growing with time e.g. Leeds and Bradford works out at around 8 kB per file.
+
 The file should have the following format:
 
 ```javascript
@@ -56,7 +61,9 @@ The file should have the following format:
     * `f` - the emissions factor
     * `kg` - the kilograms of CO2
 
-## Metadata
+## Airport metadata
+
+Each individual airport has a metadata file designed to provide summary data to tools (e.g. the [Flight Emissions tool](https://patricklake2.github.io/flight-emissions/) displays today's total kg of CO2, total flights, total kilometres flown, and unique destinations) and let them know which dates have more data available for further breakdown. It is expected to be updated on a daily basis.
 
 ```javascript
 {
@@ -67,8 +74,7 @@ The file should have the following format:
   "flights": [19,17,16,21,20,19]
 }
 ```
-
-The metadata file for an individual airport is designed to provide summary data to tools and let them know which dates have more data available. The format is defined as follows:
+The format is defined as follows:
 
 * `directory` - the directory where the individual data files for each day are stored
 * `lastupdate` - the ISO 8601 date this was last updated
@@ -78,9 +84,9 @@ The metadata file for an individual airport is designed to provide summary data 
 
 We've used ordered arrays so that more parameters could be added in the future, if necessary. With `dates`, `emissions`, and `flights` the file should grow by around 25 bytes per day (~9kB per year).
 
-## Index File
+## Index file
 
-Once you're up and running, you just need to add the location of your metadata file to our [our index file](data/index.json).  You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help.
+Once you've got your flight data and airport metadata files published somewhere on the web (with CORS enabled), you just need to add the location of your airport metadata file to our [our index file](data/index.json). You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help. This file will let tools know which airports are available. It shouldn't need to be updated often.
 
 ```javascript
 {
@@ -94,4 +100,4 @@ Each airport (keyed by the IATA code) then contains:
 * `n` - a free-form field for the displayed airport name
 * `author` - the name of the person compiling emissions data for this airport
 * `url` - a URL to e.g. the Github repository
-* `index` - the URL of an `index.json` file that defines the [metadata](#metadata) for this airport
+* `index` - the URL of an `index.json` file that defines the [metadata](#airport-metadata) for this airport
