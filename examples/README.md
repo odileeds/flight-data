@@ -26,6 +26,31 @@ The file should have the following format:
 	}]
 }
 ```
+
+* `from` - the origin airport and should appear once per file. This helps if the file ends up on a different file system.
+  * `n` - a free-form field for the displayed airport name
+  * `IATA` - the international airport code
+  * `geo` - a [`longitude`,`latitude`] array with the coordinates in degrees (compatible with GeoJSON)
+  * `cc` - the two letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code for the origin
+  * `continent` - a [two letter continent code](https://datahub.io/core/continent-codes) e.g. `AF`, `NA`, `OC`, `AN`, `AS`, `EU`, `SA`
+* `flights` - an array of flights (in chronological order). Each flight contains:
+  * `id` - the flight code
+  * `time` - the [ISO8601 timestamp](https://en.wikipedia.org/wiki/ISO_8601) for the departure (with timezone)
+  * `airline` - the name of the airline
+  * `aircraft` - details of the aircraft broken down into:
+    * `code` - the aircraft code e.g. "E190"
+    * `name` - the aircraft name e.g. "EMBRAER ERJ190"
+  * `to` - the destination broken down into:
+    * `n` - a free-form field for the displayed airport name
+    * `IATA` - the international airport code
+    * `geo` - a [`longitude`,`latitude`] array with the coordinates in degrees (compatible with GeoJSON)
+    * `cc` - the two letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code for the origin
+    * `continent` - a [two letter continent code](https://datahub.io/core/continent-codes) e.g. `AF`, `NA`, `OC`, `AN`, `AS`, `EU`, `SA`
+  * `km` - the great circle distance in kilometres
+  * `emissions` - the estimated CO2 emissions of the flight
+    * `f` - the emissions factor
+    * `kg` - the kilograms of CO2
+
 We also have a [full example](flights-example.json) to refer to.
 
 ## Metadata
