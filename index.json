@@ -1,3 +1,4 @@
 {
-	"LBA":{"name":"Leeds Bradford","author":"Patrick Lake","url":"https://github.com/patricklake2/flight-emissions/","index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/index.json"}
+	"LBA":{"name":"Leeds Bradford","author":"Patrick Lake","url":"https://github.com/patricklake2/flight-emissions/","index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/index.json"},
+	"LBA-testing":{"name":"Leeds Bradford","author":"Patrick Lake","url":"https://github.com/patricklake2/flight-emissions/","index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/dev-new-format/leeds-bradford/data/index.json"}
 }
