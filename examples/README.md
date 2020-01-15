@@ -40,7 +40,8 @@ The file should have the following format:
 
 * `from` - the origin airport and should appear once per file. This helps if the file ends up on a different file system.
   * `n` - a free-form field for the displayed airport name
-  * `IATA` - the international airport code
+  * `ICAO` - the ICOA code (usually 4 characters)
+  * `IATA` - the international airport code (usually 3 characters)
   * `geo` - a [`longitude`,`latitude`] array with the coordinates in degrees (compatible with GeoJSON)
   * `cc` - the two letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code for the origin
   * `continent` - a [two letter continent code](https://datahub.io/core/continent-codes) e.g. `AF`, `NA`, `OC`, `AN`, `AS`, `EU`, `SA`
@@ -53,6 +54,7 @@ The file should have the following format:
     * `name` - the aircraft name e.g. "EMBRAER ERJ190"
   * `to` - the destination broken down into:
     * `n` - a free-form field for the displayed airport name
+    * `ICAO` - the ICOA code
     * `IATA` - the international airport code
     * `geo` - a [`longitude`,`latitude`] array with the coordinates in degrees (compatible with GeoJSON)
     * `cc` - the two letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code for the origin
