@@ -18,6 +18,7 @@ The file should have the following format:
 {
 	"from": {        // origin airport information
 		"n": "Leeds Bradford",
+		"ICAO": "EGNM",
 		"IATA": "LBA",
 		"geo": [-1.5,53.5],
 		"cc": "GB",
@@ -28,7 +29,7 @@ The file should have the following format:
 		"time":"2019-12-11T06:10Z",
 		"airline":"KLM",
 		"aircraft":{"code":"E190","name":"EMBRAER ERJ190"},
-		"to":{"n":"Amsterdam","IATA":"AMS","geo":[4.7639,52.3086],"cc":"NL","continent":"EU" },
+		"to":{"n":"Amsterdam","ICAO":"EHAM","IATA":"AMS","geo":[4.7639,52.3086],"cc":"NL","continent":"EU" },
 		"km":462.46,
 		"emissions":{"f":10.2,"kg":4717.13}
 	},{
