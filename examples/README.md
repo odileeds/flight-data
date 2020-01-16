@@ -66,7 +66,7 @@ The file should have the following format:
     
 ### Getting data
 
-You could perhaps scrape from an airport's website or use a paid API such as [Flight Aware](https://uk.flightaware.com/commercial/flightxml/). Flight Aware have a [`Scheduled`](https://uk.flightaware.com/commercial/flightxml/explorer/#op_Scheduled) end point that returns upcoming departures and gives aircraft type codes which then allows emissions factors to be found. That end point [costs $0.0079](https://uk.flightaware.com/commercial/flightxml/pricing_class.rvt) per 15 returned results.
+You could perhaps scrape from an airport's website or use a paid API such as [Flight Aware](https://uk.flightaware.com/commercial/flightxml/). Flight Aware have a [`Scheduled`](https://uk.flightaware.com/commercial/flightxml/explorer/#op_Scheduled) end point that returns upcoming departures and gives aircraft type codes which then allows emissions factors to be found. That end point [costs $0.0079](https://uk.flightaware.com/commercial/flightxml/pricing_class.rvt) per request (which contains up to 15 flights).
 
 ### Calculating CO2 emissions
 
