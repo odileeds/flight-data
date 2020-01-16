@@ -101,14 +101,16 @@ We've used ordered arrays so that more parameters could be added in the future, 
 Once you've got your flight data and airport metadata files published somewhere on the web (with CORS enabled), you just need to add the location of your airport metadata file to our [our Primary index file](../index.json). You can edit it yourself and open a pull request, or [open an issue](https://github.com/odileeds/flight-data/issues/new) and we'll help. This file will let tools know which airports are available. It shouldn't need to be updated often.
 
 ```javascript
-{
-	"LBA":{ "n":"Leeds Bradford", "author":"Patrick Lake", "url":"https://github.com/patricklake2/flight-emissions/", "index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/index.json" },
-	"MAN":{ "n":"Manchester", "author":"TBD", "repo":"", "index":"" }
-}
+[
+	{ "IATA":"LBA", "ICAO":"EGNM", "n":"Leeds Bradford", "author":"Patrick Lake", "url":"https://github.com/patricklake2/flight-emissions/", "index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/index.json" },
+	{ "IATA":"MAN", "ICAO":"EGCC", "n":"Manchester", "author":"TBD", "repo":"", "index":"" }
+]
 ```
 
-Each airport (keyed by the IATA code) then contains:
+Each airport then contains:
 
+* `IATA` - the three letter IATA code (if it exists)
+* `ICAO` - the ICOA code (if it exists)
 * `n` - a free-form field for the displayed airport name
 * `author` - the name of the person compiling emissions data for this airport
 * `url` - a URL to e.g. the Github repository
