@@ -1,5 +1,5 @@
 {
-	"DSA":{"name":"Doncaster Sheffield","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/DSA","index":"https://raw.githubusercontent.com/slowe/flight-data/master/DSA/index.json"},
+	"DSA":{"name":"Doncaster Sheffield","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/DSA","index":"https://slowe.github.io/flight-data/DSA/index.json"},
 	"HUY":{"name":"Humberside Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/HUY","index":"https://raw.githubusercontent.com/slowe/flight-data/master/HUY/index.json"},
 	"LBA":{"name":"Leeds and Bradford","author":"Patrick Lake","url":"https://github.com/patricklake2/flight-emissions/","index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/index.json"},
 	"LCY":{"name":"London City Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/LCY","index":"https://raw.githubusercontent.com/slowe/flight-data/master/LCY/index.json"},
