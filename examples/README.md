@@ -10,7 +10,7 @@ In an attempt to keep things manageable, for both us and tools that load the dat
 
 ## Flight data
 
-This contains the full details for each departure from an airport in a given day (*local time*). You should have one directory for your data, in it there should be a seperate JSON file for each day, where the filename is the date in ISO format (YYYY-MM-DD.json). By splitting the data into individual days, it keeps filesize more manageable rather than linearly growing with time e.g. Leeds and Bradford works out at under 5.5 kB per file. You can estimate emissions using [Patrick Lake's methodology](https://github.com/patricklake2/flight-emissions/tree/master/leeds-bradford#data).
+This contains the full details for each departure from an airport in a given day (*local time*). You should have one directory for your data, in it there should be a seperate JSON file for each day, where the filename is the date in ISO format (YYYY-MM-DD.json). By splitting the data into individual days, it keeps filesize more manageable rather than linearly growing with time e.g. Leeds and Bradford works out at under 5.5 kB per file.
 
 The file should have the following format:
 
@@ -50,7 +50,7 @@ The file should have the following format:
   * `time` - the [ISO8601 timestamp](https://en.wikipedia.org/wiki/ISO_8601) for the departure in local time *with* timezone included
   * `airline` - the name of the airline
   * `aircraft` - details of the aircraft broken down into:
-    * `code` - the aircraft code e.g. "E190"
+    * `code` - the aircraft type code e.g. "E190"
     * `name` - the aircraft name e.g. "EMBRAER ERJ190"
   * `to` - the destination broken down into:
     * `n` - a free-form field for the displayed airport name
@@ -59,10 +59,19 @@ The file should have the following format:
     * `geo` - a [`longitude`,`latitude`] array with the coordinates in degrees (compatible with GeoJSON)
     * `cc` - the two letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code for the origin
     * `continent` - a [two letter continent code](https://datahub.io/core/continent-codes) e.g. `AF`, `NA`, `OC`, `AN`, `AS`, `EU`, `SA`
-  * `km` - the great circle distance in kilometres
+  * `km` - the Great Circle distance in kilometres
   * `emissions` - the estimated CO2 emissions of the flight
     * `f` - the emissions factor
     * `kg` - the kilograms of CO2
+    
+### Getting data
+
+You could perhaps scrape from an airport's website or use a paid API such as [Flight Aware](https://uk.flightaware.com/commercial/flightxml/). Flight Aware have a [`Scheduled`](https://uk.flightaware.com/commercial/flightxml/explorer/#op_Scheduled) end point that returns upcoming departures and gives aircraft type codes which then allows emissions factors to be found.
+
+### Calculating CO2 emissions
+
+You can estimate emissions using [Patrick Lake's methodology](https://github.com/patricklake2/flight-emissions/tree/master/leeds-bradford#data). Patrick extracted the aicraft emissions from [BEIS's Greenhouse gas reporting: conversion factors 2019](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2019) [methodology paper](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/829336/2019_Green-house-gas-reporting-methodology.pdf) and created a CSV. Each aircraft type code can have different emissions depending on the flight distance. In the paper they've used `Domestic`, `ShortHaul`, and `LongHaul` which we are interpreting as distances of `up to 1000km`, `above 1000km and below 3000km` and `over 3000km`. But, because the Great Circle distance and aircraft type code are provided in the data, applications could recalculate the CO2 emissions differently if they need to or if methodologies improve. For example, the [Euro Control Small Emitters Tool](https://www.eurocontrol.int/publication/small-emitters-tool-set-2019) currently recommends adding 95km to the flight distance and it would be easy for a tool to add that.
+
 
 ## Airport metadata
 
