@@ -3,5 +3,6 @@
 	{"IATA":"HUY","ICAO":"EGNJ","name":"Humberside Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/HUY","index":"https://slowe.github.io/flight-data/HUY/index.json"},
 	{"IATA":"LBA","ICAO":"EGNM","name":"Leeds and Bradford","author":"Patrick Lake","url":"https://github.com/patricklake2/flight-emissions/","index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/index.json"},
 	{"IATA":"LCY","ICAO":"EGLC","name":"London City Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/LCY","index":"https://slowe.github.io/flight-data/LCY/index.json"},
+	{"IATA":"MME","ICAO":"EGNV","name":"Durham Tees Valley Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/MME","index":"https://slowe.github.io/flight-data/MME/index.json"},
 	{"IATA":"NCL","ICAO":"EGNT","name":"Newcastle International","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/NCL","index":"https://slowe.github.io/flight-data/NCL/index.json"}
 ]
