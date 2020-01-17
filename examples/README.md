@@ -76,18 +76,13 @@ This gives the flight number (`ident`), aircraft type code (`aircrafttype`), and
 
 You can convert ICAO codes to airport names, latitudes/longitudes, country code, and continent using this [big list of airports](https://github.com/datasets/airport-codes/blob/master/archive/data.csv) which will allow you to calculate the Great Circle distance between the origin and destination.
 
-There is a [big maintained list of airlines](https://github.com/opentraveldata/opentraveldata/blob/master/opentraveldata/optd_airlines.csv) in a separate repo which isn't a CSV file but uses a different delimiter. We've converted this to CSV by tidying with the following regular expressions in perl:
-
-```type=perl
-$line =~ s/\^/\}\{/g;
-$line =~ s/\{([^\}]*\,[^\}]*)\}/\{"$1"\}/g;
-$line =~ s/\}\{/\,/g;
-```
-This contains rows of the form:
+There is a [big maintained list of airlines](https://github.com/opentraveldata/opentraveldata/blob/master/data/IATA/archives/iata_airline_list_20180808.csv) in a separate repo which is a `^` delimited file of the form:
 
 ```
-1355,"British Airways",\N,"BA","BAW","SPEEDBIRD","United Kingdom","Y"
-4296,"Ryanair",\N,"FR","RYR","RYANAIR","Ireland","Y"
+2char_code^3char_code^num_code^name^type
+...
+BA^BAW^125^British Airways p.l.c.^I
+FR^RYR^^Ryanair Ltd.^I
 ```
 
 If you take the first three characters of the `ident` you can look up the airline name e.g. `RYR2446` gives us `RYR` which is `Ryanair`.
