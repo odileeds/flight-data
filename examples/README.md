@@ -87,9 +87,10 @@ This contains rows of the form:
 
 ```
 1355,"British Airways",\N,"BA","BAW","SPEEDBIRD","United Kingdom","Y"
+4296,"Ryanair",\N,"FR","RYR","RYANAIR","Ireland","Y"
 ```
 
-If you take the first three characters of the flight number returned by Flight Aware you can look up the airline name e.g. "BAW" is "British Airways".
+If you take the first three characters of the `ident` you can look up the airline name e.g. `RYR2446` gives us `RYR` which is `Ryanair`.
 
 ### Calculating CO2 emissions
 
