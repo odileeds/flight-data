@@ -101,7 +101,7 @@ Each individual airport has a metadata file designed to provide summary data to 
 ```javascript
 {
   "directory": "https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/",
-  "lastupdate": "2020-01-08",
+  "lastupdate": "2020-01-08T06:00Z",
   "dates": ["2019-12-11","2019-12-12","2019-12-13","2019-12-14","2019-12-20","2020-01-07"]
   "emissions": [135000,130000,125000,140000,139000,135628]
   "flights": [19,17,16,21,20,19]
@@ -110,7 +110,7 @@ Each individual airport has a metadata file designed to provide summary data to 
 The format is defined as follows:
 
 * `directory` - the directory where the individual data files for each day are stored
-* `lastupdate` - the ISO 8601 date this was last updated
+* `lastupdate` - the ISO 8601 date and time that this was last updated
 * `dates` - a chronologically ordered array of ISO 8601 dates (local time) for which individual data files exist. These allow URLs to be constructed to get the breakdown for specific days
 * `emissions` - an array (in the same order as `dates`) with the total emissions in kilograms
 * `flights` - an array (in the same order as `dates`) with the number of flights per day
