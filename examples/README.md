@@ -30,8 +30,8 @@ The file should have the following format:
 		"airline":"KLM",
 		"aircraft":{"code":"E190","name":"EMBRAER ERJ190"},
 		"to":{"n":"Amsterdam","ICAO":"EHAM","IATA":"AMS","geo":[4.7639,52.3086],"cc":"NL","continent":"EU" },
-		"km":462.46,
-		"emissions":{"f":10.2,"kg":4717.13}
+		"dist":{"km":462.46,"type":"gc"},
+		"emissions":{"kg":4717.13}
 	},{
 		//another flight 
 	}]
@@ -59,9 +59,10 @@ The file should have the following format:
     * `geo` - a [`longitude`,`latitude`] array with the coordinates in degrees (compatible with GeoJSON)
     * `cc` - the two letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code for the origin
     * `continent` - a [two letter continent code](https://datahub.io/core/continent-codes) e.g. `AF`, `NA`, `OC`, `AN`, `AS`, `EU`, `SA`
-  * `km` - the Great Circle distance in kilometres
+  * `dist` - the distance
+    * `km` - the distance in kilometres
+    * `type` - `gc` for Great Circle distance or `fp` for flight path distance if that is known
   * `emissions` - the estimated CO2 emissions of the flight
-    * `f` - the emissions factor
     * `kg` - the kilograms of CO2
     
 ### Getting data
@@ -91,8 +92,12 @@ Alternatively, Opentraveldata have a [more current list of airlines](https://git
 
 ### Calculating CO2 emissions
 
-You can estimate emissions using [Patrick Lake's methodology](https://github.com/patricklake2/flight-emissions/tree/master/leeds-bradford#data). Patrick extracted the aicraft emissions from [BEIS's Greenhouse gas reporting: conversion factors 2019](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2019) [methodology paper](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/829336/2019_Green-house-gas-reporting-methodology.pdf) and created a CSV. Each aircraft type code can have different emissions depending on the flight distance. In the paper they've used `Domestic`, `Short-haul`, and `Long-haul` which we are interpreting as distances of `up to 1000km`, `above 1000km and below 3700km` and `3700km and over`. But, because the Great Circle distance and aircraft type code are provided in the data, applications could recalculate the CO2 emissions differently if they need to or if methodologies improve. For example, the [Euro Control Small Emitters Tool](https://www.eurocontrol.int/publication/small-emitters-tool-set-2019) currently recommends adding 95km to the flight distance and it would be easy for a tool to add that.
+We use the methodology from the [Euro Control Small Emitters Tool](https://www.eurocontrol.int/publication/small-emitters-tool-set-2019) (v5.09; 2019-11-29). For each aircraft type designator it provides `FUEL_TOT`, `FUEL_TOT_MARG_RATE`, `CORR_FACTOR`, and `CO2_COEFF`. The CO_2 emissions (kg) are then calculated using:
 
+```
+(FUEL_TOT + (d / 1.852) * FUEL_TOT_MARG_RATE) * CORR_FACTOR * CO2_COEFF
+```
+where `d` is the full distance flown. If the true flight path is not known (e.g. where you have had to use Great Circle Distance), `d` in this calculation should be the Great Circle Distance with an addition of 95 km (51.295 nautical miles) as indicated in EU EST regulation. This additional 95 km is a factor to deal with take-off/landing and deviations from the Great Circle line; it affects short flights more than longer ones.
 
 ## Airport metadata
 
