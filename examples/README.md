@@ -97,7 +97,7 @@ We use the methodology from the [Euro Control Small Emitters Tool](https://www.e
 ```
 (FUEL_TOT + (d / 1.852) * FUEL_TOT_MARG_RATE) * CORR_FACTOR * CO2_COEFF
 ```
-where `d` is the full distance flown. If the true flight path is not known (e.g. where you have had to use Great Circle Distance), `d` in this calculation should be the Great Circle Distance with an addition of 95 km (51.295 nautical miles) as indicated in EU EST regulation. This additional 95 km is a factor to deal with take-off/landing and deviations from the Great Circle line; it affects short flights more than longer ones.
+where `d` is the full distance flown. If the true flight path is not known (e.g. where you have had to use Great Circle Distance), `d` in this calculation should be the Great Circle Distance with an addition of 95 km (51.295 nautical miles) as indicated in EU EST regulation. This additional 95 km is a factor to deal with take-off/landing and deviations from the Great Circle line; it affects short flights more than longer ones. We've collated the aircraft data from the Euro Control Small Emitters Tool into [aircraft.csv](../resources/aircraft.csv).
 
 ## Airport metadata
 
