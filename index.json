@@ -3,7 +3,7 @@
 	{"IATA":"DSA","ICAO":"EGCN","name":"Doncaster Sheffield","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/DSA","index":"https://slowe.github.io/flight-data/DSA/index.json"},
 	{"IATA":"EMA","ICAO":"EGNX","name":"East Midlands Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/EMA","index":"https://slowe.github.io/flight-data/EMA/index.json"},
 	{"IATA":"HUY","ICAO":"EGNJ","name":"Humberside Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/HUY","index":"https://slowe.github.io/flight-data/HUY/index.json"},
-	{"IATA":"LBA","ICAO":"EGNM","name":"Leeds and Bradford","author":"Patrick Lake","url":"https://github.com/patricklake2/flight-emissions/","index":"https://raw.githubusercontent.com/patricklake2/flight-emissions/master/leeds-bradford/data/index.json"},
+	{"IATA":"LBA","ICAO":"EGNM","name":"Leeds and Bradford","author":"Patrick Lake","url":"https://github.com/patricklake2/flight-data","index":"https://raw.githubusercontent.com/patricklake2/flight-data/master/LBA/index.json"},
 	{"IATA":"LCY","ICAO":"EGLC","name":"London City Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/LCY","index":"https://slowe.github.io/flight-data/LCY/index.json"},
 	{"IATA":"LPL","ICAO":"EGGP","name":"Liverpool John Lennon Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/LPL","index":"https://slowe.github.io/flight-data/LPL/index.json"},
 	{"IATA":"MME","ICAO":"EGNV","name":"Durham Tees Valley Airport","author":"Stuart Lowe","url":"https://github.com/slowe/flight-data/tree/master/MME","index":"https://slowe.github.io/flight-data/MME/index.json"},
